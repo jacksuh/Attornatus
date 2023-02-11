@@ -2,11 +2,23 @@ package com.pessoas.api.attornatus.dto.pessoa;
 
 import com.pessoas.api.attornatus.endereco.Endereco;
 import com.pessoas.api.attornatus.pessoa.Pessoa;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.Date;
 
-public record DadosDetalhamentoPessoa (Long id, String nome, LocalDate dataNascimento){
+@Getter
+@Setter
+public class DadosDetalhamentoPessoa{
+
+    private Long id;
+    private String nome;
+    private LocalDate dataNascimento;
+
     public DadosDetalhamentoPessoa (Pessoa pessoa) {
-        this(pessoa.getId(), pessoa.getNome(), pessoa.getDataNascimento());
+        this.id = pessoa.getId();
+        this.nome = pessoa.getNome();
+        this.dataNascimento = pessoa.getDataNascimento();
     }
 }

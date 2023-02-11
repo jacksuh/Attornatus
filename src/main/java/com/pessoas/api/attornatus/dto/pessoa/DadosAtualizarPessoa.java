@@ -1,10 +1,17 @@
 package com.pessoas.api.attornatus.dto.pessoa;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.time.LocalDate;
 
-public record DadosAtualizarPessoa(
-        Long id,
-        String nome,
+@Getter
+@Setter
+@NoArgsConstructor
+public class DadosAtualizarPessoa {
 
-        LocalDate dataNascimento) {
+    private Long id;
+    private String nome;
+    private LocalDate dataNascimento;
 }

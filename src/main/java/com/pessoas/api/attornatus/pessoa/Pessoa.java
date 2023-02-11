@@ -1,5 +1,6 @@
 package com.pessoas.api.attornatus.pessoa;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.pessoas.api.attornatus.dto.pessoa.DadosAtualizarPessoa;
 import com.pessoas.api.attornatus.dto.pessoa.DadosCadastroPessoa;
@@ -10,6 +11,7 @@ import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 
@@ -27,25 +29,27 @@ public class Pessoa {
     private Long id;
     private String nome;
 
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataNascimento;
 
     @JsonIgnore
     @OneToMany(mappedBy="pessoa")
     private List<Endereco> endereco;
     public Pessoa(DadosCadastroPessoa dados) {
-        this.nome = dados.nome();
+        this.nome = dados.getNome();
+        this.dataNascimento = dados.getDataNascimento();
 
     }
 
     public Pessoa(DadosPessoa pessoa) {
-        this.id = pessoa.id();
+        this.id = pessoa.getId();
     }
 
 
+
     public void atualizarInformacoes(DadosAtualizarPessoa dados) {
-        if(dados.nome() != null){
-            this.nome = dados.nome();
+        if(dados.getNome() != null){
+            this.nome = dados.getNome();
         }
     }
 

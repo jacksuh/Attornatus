@@ -34,10 +34,11 @@ public class Endereco {
     private boolean ativo;
 
     public Endereco(DadosCadastrarEndereco dados) {
-        this.logradouro = dados.logradouro();
-        this.cep = dados.cep();
-        this.numero = dados.numero();
-        this.pessoa = new Pessoa(dados.pessoa());
+        this.logradouro = dados.getLogradouro();
+        this.cep = dados.getCep();
+        this.numero = dados.getNumero();
+        this.cidade = dados.getCidade();
+        this.pessoa = new Pessoa(dados.getPessoa());
     }
 
     public void excluir() {
@@ -45,8 +46,8 @@ public class Endereco {
     }
 
     public void atualizarInformacoes(DadosAtualizarEnderecoAtivo dados) {
-            if (dados.ativo() != null){
-                this.ativo = dados.ativo();
+            if (dados.getAtivo() != null){
+                this.ativo = dados.getAtivo();
             }
     }
 }

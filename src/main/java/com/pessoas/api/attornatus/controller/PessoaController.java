@@ -39,7 +39,7 @@ public class PessoaController {
 
     @PutMapping
     public ResponseEntity atualizar (@RequestBody  DadosAtualizarPessoa dados){
-        var pessoa = repository.getReferenceById(dados.id());
+        var pessoa = repository.getReferenceById(dados.getId());
         pessoa.atualizarInformacoes(dados);
         repository.save(pessoa);
         return ResponseEntity.ok(new DadosDetalhamentoPessoa(pessoa));

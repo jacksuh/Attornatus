@@ -33,7 +33,7 @@ public class EnderecoController {
 
     @PutMapping
     public ResponseEntity enderecoPrincipal(@RequestBody DadosAtualizarEnderecoAtivo dados){
-        var endereco = repository.getReferenceById(dados.id());
+        var endereco = repository.getReferenceById(dados.getId());
         endereco.atualizarInformacoes(dados);
         repository.save(endereco);
         return ResponseEntity.ok(new DadosDetalhamentoEndereco(endereco));
@@ -44,4 +44,13 @@ public class EnderecoController {
         var page = repository.findAll(paginacao).map(DadosListagemEndereco::new);
         return ResponseEntity.ok(page);
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity excluir(@PathVariable Long id){
+        var endereco = repository.getReferenceById(id);
+        repository.delete(endereco);
+        return ResponseEntity.noContent().build();
+    }
+
+    
 }

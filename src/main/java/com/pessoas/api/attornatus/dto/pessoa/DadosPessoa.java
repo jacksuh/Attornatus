@@ -1,10 +1,19 @@
 package com.pessoas.api.attornatus.dto.pessoa;
 
 import com.pessoas.api.attornatus.pessoa.Pessoa;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-public record DadosPessoa(Long id) {
+@Getter
+@Setter
+@NoArgsConstructor
+public class DadosPessoa{
+
+
+    private Long id;
 
     public DadosPessoa(Pessoa pessoa){
-        this(pessoa.getId());
+        this.id = pessoa.getId();
     }
 }
