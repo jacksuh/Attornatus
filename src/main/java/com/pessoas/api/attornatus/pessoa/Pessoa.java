@@ -1,13 +1,15 @@
 package com.pessoas.api.attornatus.pessoa;
 
-import com.pessoas.api.attornatus.dto.DadosAtualizarPessoa;
-import com.pessoas.api.attornatus.dto.DadosCadastrarEndereco;
-import com.pessoas.api.attornatus.dto.DadosCadastroPessoa;
-import com.pessoas.api.attornatus.dto.DadosPessoa;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.pessoas.api.attornatus.dto.pessoa.DadosAtualizarPessoa;
+import com.pessoas.api.attornatus.dto.pessoa.DadosCadastroPessoa;
+import com.pessoas.api.attornatus.dto.pessoa.DadosPessoa;
 import com.pessoas.api.attornatus.endereco.Endereco;
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
+import java.time.LocalDate;
 import java.util.List;
 
 
@@ -25,7 +27,12 @@ public class Pessoa {
     private Long id;
     private String nome;
 
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    private LocalDate dataNascimento;
 
+    @JsonIgnore
+    @OneToMany(mappedBy="pessoa")
+    private List<Endereco> endereco;
     public Pessoa(DadosCadastroPessoa dados) {
         this.nome = dados.nome();
 

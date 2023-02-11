@@ -1,10 +1,10 @@
 package com.pessoas.api.attornatus.controller;
 
 
-import com.pessoas.api.attornatus.dto.DadosAtualizarPessoa;
-import com.pessoas.api.attornatus.dto.DadosCadastroPessoa;
-import com.pessoas.api.attornatus.dto.DadosDetalhamentoPessoa;
-import com.pessoas.api.attornatus.dto.DadosListagemPessoa;
+import com.pessoas.api.attornatus.dto.pessoa.DadosAtualizarPessoa;
+import com.pessoas.api.attornatus.dto.pessoa.DadosCadastroPessoa;
+import com.pessoas.api.attornatus.dto.pessoa.DadosDetalhamentoPessoa;
+import com.pessoas.api.attornatus.dto.pessoa.DadosListagemPessoa;
 import com.pessoas.api.attornatus.pessoa.Pessoa;
 import com.pessoas.api.attornatus.pessoa.PessoaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 

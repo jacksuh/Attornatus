@@ -1,4 +1,4 @@
-package com.pessoas.api.attornatus.dto;
+package com.pessoas.api.attornatus.dto.pessoa;
 
 import com.pessoas.api.attornatus.pessoa.Pessoa;
 
