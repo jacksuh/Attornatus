@@ -5,8 +5,9 @@ import com.pessoas.api.attornatus.dto.pessoa.DadosAtualizarPessoa;
 import com.pessoas.api.attornatus.dto.pessoa.DadosCadastroPessoa;
 import com.pessoas.api.attornatus.dto.pessoa.DadosDetalhamentoPessoa;
 import com.pessoas.api.attornatus.dto.pessoa.DadosListagemPessoa;
-import com.pessoas.api.attornatus.pessoa.Pessoa;
-import com.pessoas.api.attornatus.pessoa.PessoaRepository;
+import com.pessoas.api.attornatus.model.Pessoa;
+import com.pessoas.api.attornatus.service.PessoaService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -20,41 +21,38 @@ import org.springframework.web.util.UriComponentsBuilder;
 public class PessoaController {
 
     @Autowired
-    private PessoaRepository repository;
+    private PessoaService service;
 
     @PostMapping
-    public ResponseEntity cadastrar(@RequestBody DadosCadastroPessoa dados, UriComponentsBuilder uriBuilder){
-        var pessoa = new Pessoa(dados);
-        repository.save(pessoa);
+    public ResponseEntity cadastrar(@RequestBody @Valid DadosCadastroPessoa dados, UriComponentsBuilder uriBuilder){
+        var pessoa = service.salvarPessoa(dados);
         var uri = uriBuilder.path("/pessoas/{id}").buildAndExpand(pessoa.getId()).toUri();
 
         return ResponseEntity.created(uri).body(new DadosDetalhamentoPessoa(pessoa));
     }
 
+
     @GetMapping
     public ResponseEntity<Page<DadosListagemPessoa>> listar(@PageableDefault(size = 10, sort ={"nome"})Pageable paginacao){
-        var page = repository.findAll(paginacao).map(DadosListagemPessoa::new);
-         return ResponseEntity.ok(page);
+        var page = service.listar(paginacao);
+        return ResponseEntity.ok(page);
     }
 
+
     @PutMapping
-    public ResponseEntity atualizar (@RequestBody  DadosAtualizarPessoa dados){
-        var pessoa = repository.getReferenceById(dados.getId());
-        pessoa.atualizarInformacoes(dados);
-        repository.save(pessoa);
-        return ResponseEntity.ok(new DadosDetalhamentoPessoa(pessoa));
+    public ResponseEntity atualizar (@RequestBody @Valid DadosAtualizarPessoa dados){
+
+        Pessoa p = service.atualizarPessoa(dados);
+
+        return ResponseEntity.ok(new DadosDetalhamentoPessoa(p));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity excluir(@PathVariable Long id){
-        var pessoa = repository.getReferenceById(id);
-        repository.delete(pessoa);
-            return ResponseEntity.noContent().build();
+    public ResponseEntity deletarFuncionario(@PathVariable("id") Long id){
+        service.deletarPessoa(id);
+
+        return ResponseEntity.noContent().build();
     }
-
-
-
-
 
 
 }

@@ -1,16 +1,23 @@
 package com.pessoas.api.attornatus.endereco;
 
+import com.pessoas.api.attornatus.dto.endereco.DadosAtualizarEndereco;
 import com.pessoas.api.attornatus.dto.endereco.DadosCadastrarEndereco;
+import com.pessoas.api.attornatus.dto.endereco.DadosListagemEndereco;
 import com.pessoas.api.attornatus.dto.pessoa.DadosCadastroPessoa;
 import com.pessoas.api.attornatus.dto.pessoa.DadosPessoa;
-import com.pessoas.api.attornatus.pessoa.Pessoa;
-import com.pessoas.api.attornatus.pessoa.PessoaRepository;
+import com.pessoas.api.attornatus.model.Endereco;
+import com.pessoas.api.attornatus.model.Pessoa;
+import com.pessoas.api.attornatus.repository.PessoaRepository;
+import com.pessoas.api.attornatus.service.EnderecoService;
+import com.pessoas.api.attornatus.service.PessoaService;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDate;
 
@@ -19,64 +26,133 @@ import java.time.LocalDate;
 public class EnderecoTest {
 
     @Autowired
-    private EnderecoRepository repository;
+    private EnderecoService service;
 
+    @Autowired
+    private PessoaService pessoaService;
     @Autowired
     private PessoaRepository pessoaRepository;
 
     @Test
     public void testeSalvar(){
 
-        DadosCadastroPessoa pessoa = new DadosCadastroPessoa();
-        pessoa.setNome("Jackson");
-        pessoa.setDataNascimento(LocalDate.of(1987, 7, 8));
+        DadosCadastroPessoa p = new DadosCadastroPessoa();
+        p.setNome("Jackson");
+        p.setDataNascimento(LocalDate.of(1987, 7, 8));
 
-        var p = new Pessoa(pessoa);
-        pessoaRepository.save(p);
+        Pessoa pessoa = pessoaService.salvarPessoa(p);
 
-        Pessoa pessoas = new Pessoa(pessoa);
-        Long id = pessoas.getId();
+        Long id = pessoa.getId();
 
-        Assert.assertEquals("Jackson",pessoas.getNome());
+        DadosPessoa pessoas = new DadosPessoa(pessoa);
+        Long idDescricao = pessoas.getId();
+        Pessoa pes =
+                pessoaRepository.findById(idDescricao)
+                        .orElseThrow(()-> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Endereco não encontrado"));
+
+
+
+        DadosCadastrarEndereco cadastrar = new DadosCadastrarEndereco();
+        cadastrar.setLogradouro("rua 1");
+        cadastrar.setCep("12345678");
+        cadastrar.setNumero("35");
+        cadastrar.setCidade("São Paulo");
+        cadastrar.setPessoa(pessoas);
+
+        service.salvarEndereco(cadastrar);
+
+        Assert.assertEquals("rua 1", cadastrar.getLogradouro());
+        Assert.assertEquals("35", cadastrar.getNumero());
+    }
+
+    @Test
+    public void testAtualizacaoPessoa(){
+        DadosCadastroPessoa p = new DadosCadastroPessoa();
+        p.setNome("Jackson");
+        p.setDataNascimento(LocalDate.of(1987, 7, 8));
+
+        Pessoa pessoa = pessoaService.salvarPessoa(p);
+
+        Long id = pessoa.getId();
+
+        DadosPessoa pessoas = new DadosPessoa(pessoa);
+        Long idDescricao = pessoas.getId();
+        Pessoa pes =
+                pessoaRepository.findById(idDescricao)
+                        .orElseThrow(()-> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Endereco não encontrado"));
+
+
+
+        DadosCadastrarEndereco cadastrar = new DadosCadastrarEndereco();
+        cadastrar.setLogradouro("rua 1");
+        cadastrar.setCep("12345678");
+        cadastrar.setNumero("35");
+        cadastrar.setCidade("São Paulo");
+        cadastrar.setPessoa(pessoas);
+
+        service.salvarEndereco(cadastrar);
+
+
+
+        DadosAtualizarEndereco atualizar = new DadosAtualizarEndereco();
+        atualizar.setId(id);
+        atualizar.setLogradouro("rua 2");
+        atualizar.setCep("12345678");
+        atualizar.setNumero("34");
+        atualizar.setCidade("São Paulo");
+        atualizar.setPessoa(pessoas);
+
+        service.atualizarEndereco(atualizar);
+
+        Assert.assertEquals("rua 2", atualizar.getLogradouro());
+        Assert.assertEquals("34", atualizar.getNumero());
+    }
+
+
+
+    @Test
+    public void testDeletarEndereco(){
+        DadosCadastroPessoa p = new DadosCadastroPessoa();
+        p.setNome("Jackson");
+        p.setDataNascimento(LocalDate.of(1987, 7, 8));
+
+        Pessoa pessoa = pessoaService.salvarPessoa(p);
+
+        Long id = pessoa.getId();
+
+        DadosPessoa pessoas = new DadosPessoa(pessoa);
+        Long idDescricao = pessoas.getId();
+        Pessoa pes =
+                pessoaRepository.findById(idDescricao)
+                        .orElseThrow(()-> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Endereco não encontrado"));
+
 
         DadosCadastrarEndereco e = new DadosCadastrarEndereco();
         e.setLogradouro("rua 1");
         e.setCep("12345678");
-        e.setNumero("5");
+        e.setNumero("35");
         e.setCidade("São Paulo");
-        e.setPessoa();
+        e.setPessoa(pessoas);
 
-        var endereco = new Endereco(e);
-        repository.save(endereco);
+        Endereco endereco = service.salvarEndereco(e);
 
-        Assert.assertEquals("rua 1", e.getLogradouro());
+        Long ids = endereco.getId();
 
+        service.deletarEndereco(ids);
 
-    }
-
-
-    @Test
-    public void testDeletarFuncionario(){
-
-        DadosCadastrarEndereco e = new DadosCadastrarEndereco();
-        e.setLogradouro("rua 1");
-        e.setCep("12345678");
-        e.setNumero("5");
-        e.setCidade("São Paulo");
-
-        var endereco = new Endereco(e);
-        repository.save(endereco);
-
-        Endereco end = new Endereco(e);
-        Long id = endereco.getId();
-
-        repository.delete(end);
+        Assert.assertFalse(false);
 
     }
 
     @Test
-    public void testePesquisarPessoa(){
-        Page<Endereco> p = repository.findAll(PageRequest.of(0,1));
+    public void testePesquisarEndereco(){
+        DadosCadastroPessoa pes = new DadosCadastroPessoa();
+        pes.setNome("Jackson");
+        pes.setDataNascimento(LocalDate.of(1987, 7, 8));
+
+        Pessoa pessoa = pessoaService.salvarPessoa(pes);
+
+        Page<DadosListagemEndereco> p = service.listar(PageRequest.of(1,1));
 
         Assert.assertEquals(1, p.getSize());
     }

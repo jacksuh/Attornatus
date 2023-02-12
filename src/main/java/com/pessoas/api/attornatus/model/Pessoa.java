@@ -1,17 +1,14 @@
-package com.pessoas.api.attornatus.pessoa;
+package com.pessoas.api.attornatus.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.pessoas.api.attornatus.dto.pessoa.DadosAtualizarPessoa;
 import com.pessoas.api.attornatus.dto.pessoa.DadosCadastroPessoa;
 import com.pessoas.api.attornatus.dto.pessoa.DadosPessoa;
-import com.pessoas.api.attornatus.endereco.Endereco;
+import com.pessoas.api.attornatus.model.Endereco;
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.format.annotation.DateTimeFormat;
-
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 
@@ -50,6 +47,9 @@ public class Pessoa {
     public void atualizarInformacoes(DadosAtualizarPessoa dados) {
         if(dados.getNome() != null){
             this.nome = dados.getNome();
+        }
+        if(dados.getDataNascimento() != null){
+            this.dataNascimento = dados.getDataNascimento();
         }
     }
 

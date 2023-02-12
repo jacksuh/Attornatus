@@ -1,27 +1,22 @@
 package com.pessoas.api.attornatus.dto.endereco;
 
 import com.pessoas.api.attornatus.dto.pessoa.DadosPessoa;
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 
 @Getter
 @Setter
-@NoArgsConstructor
-public class DadosCadastrarEndereco {
+public class DadosAtualizarEndereco {
 
-    @NotBlank
+    @NotNull
+    private Long id;
     private String logradouro;
-    @NotBlank
     private String cep;
-    @NotBlank
     private String numero;
-    @NotBlank
     private String cidade;
+
     @NotNull
     private DadosPessoa pessoa;
-
+    private boolean ativo;
 }

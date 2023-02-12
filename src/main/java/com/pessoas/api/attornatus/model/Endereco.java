@@ -1,9 +1,9 @@
-package com.pessoas.api.attornatus.endereco;
+package com.pessoas.api.attornatus.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.pessoas.api.attornatus.dto.endereco.DadosAtualizarEndereco;
 import com.pessoas.api.attornatus.dto.endereco.DadosAtualizarEnderecoAtivo;
 import com.pessoas.api.attornatus.dto.endereco.DadosCadastrarEndereco;
-import com.pessoas.api.attornatus.pessoa.Pessoa;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -49,5 +49,24 @@ public class Endereco {
             if (dados.getAtivo() != null){
                 this.ativo = dados.getAtivo();
             }
+    }
+
+
+    public void atualizarInformacoes(DadosAtualizarEndereco dados) {
+        if(dados.getLogradouro() != null){
+            this.logradouro = dados.getLogradouro();
+        }
+        if(dados.getCep() != null){
+            this.cep = dados.getCep();
+        }
+        if(dados.getNumero() != null){
+            this.numero = dados.getNumero();
+        }
+        if(dados.getCidade() != null){
+            this.cidade = dados.getCidade();
+        }
+        if(dados.getPessoa() != null){
+            this.pessoa = new Pessoa(dados.getPessoa());
+        }
     }
 }

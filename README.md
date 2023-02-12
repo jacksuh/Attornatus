@@ -1,9 +1,22 @@
 ## 💻 Sobre o projeto
 
-Api criada para o Desafio Attornatus
+Api criada para o Desafio Attornatus<br>
+
+## Descrição do solicitado.
+
+Usando Spring boot, crie uma API simples para gerenciar Pessoas. Esta API deve permitir: <br>
+
+• Criar uma pessoa<br>
+• Editar uma pessoa<br>
+• Consultar uma pessoa<br>
+• Listar pessoas<br>
+• Criar endereço para pessoa<br>
+• Listar endereços da pessoa<br>
+• Poder informar qual endereço é o principal da pessoa
 
 ## ⚙️ Funcionalidades
 - [x] CRUD de pessoa;
+- [x] CRUD de endereço;
 
 
 ## 🛠 Tecnologias
@@ -16,4 +29,6 @@ As seguintes tecnologias foram utilizadas no desenvolvimento da API Rest do proj
 - **[H2](http://localhost:8080/h2)**
 - **[Hibernate](https://hibernate.org)**
 - **[Lombok](https://projectlombok.org)**
+- **[Junit](https://junit.org/junit4/)**
+- **[Swagger](https://swagger.io/docs/)**
 

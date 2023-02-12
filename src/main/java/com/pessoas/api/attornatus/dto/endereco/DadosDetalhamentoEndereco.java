@@ -1,7 +1,6 @@
 package com.pessoas.api.attornatus.dto.endereco;
 
-import com.pessoas.api.attornatus.endereco.Endereco;
-import com.pessoas.api.attornatus.pessoa.Pessoa;
+import com.pessoas.api.attornatus.model.Endereco;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -9,6 +8,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
+@NoArgsConstructor
 public class DadosDetalhamentoEndereco{
 
     private String logradouro;
@@ -17,12 +17,16 @@ public class DadosDetalhamentoEndereco{
     private String cidade;
     private Long pessoa;
 
+    private boolean ativo;
+
     public DadosDetalhamentoEndereco(Endereco endereco) {
         this.logradouro = endereco.getLogradouro();
         this.cep = endereco.getCep();
         this.numero = endereco.getNumero();
         this.cidade = endereco.getCidade();
         this.pessoa = endereco.getPessoa().getId();
+        this.ativo = endereco.isAtivo();
 
     }
+
 }
