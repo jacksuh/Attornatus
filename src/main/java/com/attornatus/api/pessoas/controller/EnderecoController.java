@@ -16,6 +16,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
+/**
+ * Classe responsavel pelas requisições com os metodos Salvar/Atualizar/Deletar/pesquisar para Endereco.
+ * Autor: Jackson Santos
+ *
+ */
+
 @RestController
 @RequestMapping("endereco")
 public class EnderecoController {

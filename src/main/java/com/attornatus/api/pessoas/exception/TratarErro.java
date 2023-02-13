@@ -7,6 +7,12 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+/**
+ * Classe TratarErro -  responsavel por tratamento de erro.
+ * Autor: Jackson Santos
+ *
+ */
+
 @RestControllerAdvice
 public class TratarErro {
 

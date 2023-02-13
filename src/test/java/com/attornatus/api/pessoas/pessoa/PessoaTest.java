@@ -15,6 +15,11 @@ import org.springframework.data.domain.PageRequest;
 
 import java.time.LocalDate;
 
+/**
+ * Classe PessoaTest, responsavel por Testar das regras Salvar,Listar,Atualizar,Deletar .
+ * Autor: Jackson Santos
+ */
+
 
 @SpringBootTest
 public class PessoaTest {

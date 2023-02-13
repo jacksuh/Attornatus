@@ -21,6 +21,11 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDate;
 
+/**
+ * Classe EnderecoTest, responsavel por Testar das regras Salvar,Listar,Atualizar,Deletar .
+ * Autor: Jackson Santos
+ */
+
 
 @SpringBootTest
 public class EnderecoTest {

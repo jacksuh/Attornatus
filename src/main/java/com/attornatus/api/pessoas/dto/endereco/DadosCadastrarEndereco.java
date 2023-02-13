@@ -7,6 +7,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Classe DadosCadastrarEndereco - DTO - Data Transfer Object, responsavel pelo tratamento de dados para salvar endereço.
+ * Autor: Jackson Santos
+ *
+ */
 
 @Getter
 @Setter

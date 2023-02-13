@@ -1,11 +1,19 @@
 package com.attornatus.api.pessoas.model;
 
 import com.attornatus.api.pessoas.dto.endereco.DadosAtualizarEndereco;
-import com.attornatus.api.pessoas.dto.endereco.DadosAtualizarEnderecoAtivo;
 import com.attornatus.api.pessoas.dto.endereco.DadosCadastrarEndereco;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
+
+/**
+ * Classe para declaração de dados e persistencia com o banco de dados, sera criado a tabela Endereco.
+ * Tratamento de cardinalidade N-1 com a classe pessoa.
+ * Atributo boolean para ativar endereço principal.
+ *
+ * Autor: Jackson Santos
+ */
+
 
 @Table(name = "endereco")
 @Entity(name = "Endereco")
@@ -45,11 +53,11 @@ public class Endereco {
         this.ativo = false;
     }
 
-    public void atualizarInformacoes(DadosAtualizarEnderecoAtivo dados) {
-            if (dados.getAtivo() != null){
-                this.ativo = dados.getAtivo();
-            }
-    }
+    //public void atualizarInformacoes(DadosAtualizarEnderecoAtivo dados) {
+           // if (dados.getAtivo() != null){
+             //   this.ativo = dados.getAtivo();
+         //   }
+ //   }
 
 
     public void atualizarInformacoes(DadosAtualizarEndereco dados) {

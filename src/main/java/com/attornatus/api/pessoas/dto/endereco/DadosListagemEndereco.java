@@ -5,6 +5,12 @@ import com.attornatus.api.pessoas.model.Pessoa;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * Classe DadosListagemEndereco - DTO - Data Transfer Object, responsavel para devolver Lista de endereço.
+ * Autor: Jackson Santos
+ *
+ */
+
 @Getter
 @Setter
 public class DadosListagemEndereco{

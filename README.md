@@ -32,3 +32,32 @@ As seguintes tecnologias foram utilizadas no desenvolvimento da API Rest do proj
 - **[Junit](https://junit.org/junit4/)**
 - **[Swagger](https://swagger.io/docs/)**
 
+
+## Sobre o Desafio.<p>
+    ## Sobre a Api.
+
+    # Pessoa
+
+    - Cadastro de Pessoa: POST - localhost:8080/pessoas
+
+    - Listar Pessoa: - GET - localhost:8080/pessoas
+
+    - Atualizar Pessoa  - PUT localhost:8080/pessoas
+
+    - Deletar Pessoa - DELETE localhost:8080/pessoas/id
+
+    # Endereco
+
+    - Cadastro de Endereco - POST - localhost:8080/endereco
+
+    - Listar Endereco - localhost:8080/endereco
+
+    - Atualizar Endereco - PUT localhost:8080/endereco
+
+    - Deletar - DELETE - http://localhost:8080/endereco/id
+
+    - Utilizado estrutura MVC e utilização da classe DTO Data Transfer Object.
+
+    - Relacionamento de N-1 - 1-N utilizando o Spring.
+    
+    - Campo boleano para ativar endereço principal - Classe Endereço.

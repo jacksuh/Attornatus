@@ -5,6 +5,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Classe DadosDetalhamentoEndereco - DTO - Data Transfer Object, responsavel para devolver detalhado o endereço.
+ * Autor: Jackson Santos
+ *
+ */
+
 
 @Getter
 @Setter

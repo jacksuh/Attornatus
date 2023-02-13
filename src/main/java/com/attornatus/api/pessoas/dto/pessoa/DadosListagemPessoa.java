@@ -7,6 +7,12 @@ import lombok.Setter;
 import java.time.LocalDate;
 import java.util.List;
 
+/**
+ * Classe DadosListagemPessoa - DTO - Data Transfer Object, responsavel por Listar dados da pessoa.
+ * Autor: Jackson Santos
+ *
+ */
+
 @Getter
 @Setter
 public class DadosListagemPessoa {

@@ -10,6 +10,12 @@ import lombok.*;
 import java.time.LocalDate;
 import java.util.List;
 
+/**
+ * Classe para declaração de dados e persistencia com o banco de dados, sera criado a tabela Pessoa.
+ * Tratamento de cardinalidade 1-N com a classe endereço.
+ *
+ * Autor: Jackson Santos
+ */
 
 @Table(name = "pessoas")
 @Entity(name = "Pessoas")

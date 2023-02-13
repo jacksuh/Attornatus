@@ -8,6 +8,12 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 
+/**
+ * Classe DadosAtualizarPessoa - DTO - Data Transfer Object, responsavel por atualizar dados da pessoa.
+ * Autor: Jackson Santos
+ *
+ */
+
 @Getter
 @Setter
 @NoArgsConstructor

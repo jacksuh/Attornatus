@@ -13,6 +13,11 @@ import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+/**
+ * Classe para tratamento de dados e persistencia para o modelo Pessoa (regras de negocio).
+ * Autor: Jackson Santos
+ */
+
 @Service
 public class PessoaService {
 

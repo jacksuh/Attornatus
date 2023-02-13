@@ -16,6 +16,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
+
+/**
+ * Classe responsavel pelas requisições com os metodos Salvar/Atualizar/Deletar/pesquisar para Pessoa.
+ * Autor: Jackson Santos
+ *
+ */
+
 @RestController
 @RequestMapping("pessoas")
 public class PessoaController {

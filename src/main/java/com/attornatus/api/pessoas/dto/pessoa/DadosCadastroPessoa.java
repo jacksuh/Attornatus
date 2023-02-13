@@ -8,6 +8,12 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 
+/**
+ * Classe DadosCadastroPessoa - DTO - Data Transfer Object, responsavel por Salvar dados da pessoa.
+ * Autor: Jackson Santos
+ *
+ */
+
 
 @Getter
 @Setter
