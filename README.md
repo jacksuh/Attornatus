@@ -54,7 +54,7 @@ As seguintes tecnologias foram utilizadas no desenvolvimento da API Rest do proj
 
     - Atualizar Endereco - PUT localhost:8080/endereco
 
-    - Deletar - DELETE - http://localhost:8080/endereco/id
+    - Deletar Endereco - DELETE - http://localhost:8080/endereco/id
 
     - Utilizado estrutura MVC e utilização da classe DTO Data Transfer Object.
 
