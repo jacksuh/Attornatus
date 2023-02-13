@@ -7,7 +7,7 @@ import com.attornatus.api.pessoas.dto.endereco.DadosListagemEndereco;
 import com.attornatus.api.pessoas.model.Pessoa;
 import com.attornatus.api.pessoas.repository.EnderecoRepository;
 import com.attornatus.api.pessoas.repository.PessoaRepository;
-import com.pessoas.api.attornatus.dto.endereco.*;
+import com.attornatus.api.pessoas.dto.endereco.*;
 import com.attornatus.api.pessoas.model.Endereco;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
