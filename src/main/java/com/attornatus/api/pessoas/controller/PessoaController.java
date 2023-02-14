@@ -2,7 +2,7 @@ package com.attornatus.api.pessoas.controller;
 
 
 import com.attornatus.api.pessoas.dto.pessoa.DadosCadastroPessoa;
-import com.attornatus.api.pessoas.model.Pessoa;
+import com.attornatus.api.pessoas.model.pessoa.Pessoa;
 import com.attornatus.api.pessoas.service.PessoaService;
 import com.attornatus.api.pessoas.dto.pessoa.DadosAtualizarPessoa;
 import com.attornatus.api.pessoas.dto.pessoa.DadosDetalhamentoPessoa;

@@ -1,6 +1,6 @@
 package com.attornatus.api.pessoas.dto.endereco;
 
-import com.attornatus.api.pessoas.model.Endereco;
+import com.attornatus.api.pessoas.model.endereco.Endereco;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

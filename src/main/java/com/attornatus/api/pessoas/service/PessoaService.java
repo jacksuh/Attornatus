@@ -4,7 +4,7 @@ package com.attornatus.api.pessoas.service;
 import com.attornatus.api.pessoas.dto.pessoa.DadosAtualizarPessoa;
 import com.attornatus.api.pessoas.dto.pessoa.DadosCadastroPessoa;
 import com.attornatus.api.pessoas.dto.pessoa.DadosListagemPessoa;
-import com.attornatus.api.pessoas.model.Pessoa;
+import com.attornatus.api.pessoas.model.pessoa.Pessoa;
 import com.attornatus.api.pessoas.repository.PessoaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

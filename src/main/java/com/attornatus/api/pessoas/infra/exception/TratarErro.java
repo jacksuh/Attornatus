@@ -1,4 +1,4 @@
-package com.attornatus.api.pessoas.exception;
+package com.attornatus.api.pessoas.infra.exception;
 
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.ResponseEntity;

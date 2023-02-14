@@ -1,7 +1,8 @@
-package com.attornatus.api.pessoas.model;
+package com.attornatus.api.pessoas.model.endereco;
 
 import com.attornatus.api.pessoas.dto.endereco.DadosAtualizarEndereco;
 import com.attornatus.api.pessoas.dto.endereco.DadosCadastrarEndereco;
+import com.attornatus.api.pessoas.model.pessoa.Pessoa;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;

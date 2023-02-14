@@ -1,7 +1,8 @@
-package com.attornatus.api.pessoas.model;
+package com.attornatus.api.pessoas.model.pessoa;
 
 import com.attornatus.api.pessoas.dto.pessoa.DadosCadastroPessoa;
 import com.attornatus.api.pessoas.dto.pessoa.DadosPessoa;
+import com.attornatus.api.pessoas.model.endereco.Endereco;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.attornatus.api.pessoas.dto.pessoa.DadosAtualizarPessoa;

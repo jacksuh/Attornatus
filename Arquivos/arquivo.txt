@@ -1,0 +1,49 @@
+Cadastrar Pessoa
+
+{
+"nome": "Jackson",
+"dataNascimento": "08/07/1987"
+}
+
+Cadastrar Endereco
+
+{
+    "logradouro": "rua 1",
+    "cep": "12345678",
+    "numero": "2",
+	  "cidade":"São Paulo",
+"pessoa":{
+		"id":"1"
+	}
+}
+
+Atualizar pessoa
+
+{
+ "id": 1,
+ "nome":"Jackson Santos",
+	"dataNascimento": "08/07/1987"
+}
+
+Atualizar endereco
+
+Ativo true, endereço ativo.
+
+{
+		"id": 1,
+    "logradouro": "rua 2",
+    "cep": "12345678",
+    "numero": "2",
+	  "cidade":"São Paulo",
+		"ativo": true,
+	"pessoa": {
+				"id": 1
+			}
+}
+
+Usuario
+
+{
+   "login": "jackson@gmail.com",
+   "senha": "123456"
+}

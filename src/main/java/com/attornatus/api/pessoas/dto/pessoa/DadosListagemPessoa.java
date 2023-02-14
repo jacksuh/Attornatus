@@ -1,7 +1,7 @@
 package com.attornatus.api.pessoas.dto.pessoa;
 
-import com.attornatus.api.pessoas.model.Pessoa;
-import com.attornatus.api.pessoas.model.Endereco;
+import com.attornatus.api.pessoas.model.pessoa.Pessoa;
+import com.attornatus.api.pessoas.model.endereco.Endereco;
 import lombok.Getter;
 import lombok.Setter;
 import java.time.LocalDate;

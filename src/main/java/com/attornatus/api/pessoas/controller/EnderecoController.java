@@ -5,7 +5,7 @@ import com.attornatus.api.pessoas.dto.endereco.DadosCadastrarEndereco;
 import com.attornatus.api.pessoas.dto.endereco.DadosDetalhamentoEndereco;
 import com.attornatus.api.pessoas.dto.endereco.DadosListagemEndereco;
 import com.attornatus.api.pessoas.repository.EnderecoRepository;
-import com.attornatus.api.pessoas.model.Endereco;
+import com.attornatus.api.pessoas.model.endereco.Endereco;
 import com.attornatus.api.pessoas.service.EnderecoService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -31,10 +31,12 @@ As seguintes tecnologias foram utilizadas no desenvolvimento da API Rest do proj
 - **[Lombok](https://projectlombok.org)**
 - **[Junit](https://junit.org/junit4/)**
 - **[Swagger](https://swagger.io/docs/)**
+- **[Sṕring Security](https://docs.spring.io/spring-security/reference/index.html)**
+- **[JWT auth0](https://jwt.io/)**
 
 
 ## Sobre o Desafio.<p>
-    ## Sobre a Api.
+    ## Informações da Api.
 
     # Pessoa
 
@@ -61,3 +63,7 @@ As seguintes tecnologias foram utilizadas no desenvolvimento da API Rest do proj
     - Relacionamento de N-1 - 1-N utilizando o Spring.
     
     - Campo boleano para ativar endereço principal - Classe Endereço.
+    
+    - Implementado autenticação por token JWT, criado o arquivo data.sql com usuario e senha no formato Bcrypt.
+
+    - Arquivo com as requisições json também em anexo ao projeto.

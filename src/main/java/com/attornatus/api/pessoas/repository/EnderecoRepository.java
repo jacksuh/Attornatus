@@ -1,6 +1,6 @@
 package com.attornatus.api.pessoas.repository;
 
-import com.attornatus.api.pessoas.model.Endereco;
+import com.attornatus.api.pessoas.model.endereco.Endereco;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

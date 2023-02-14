@@ -1,6 +1,6 @@
 package com.attornatus.api.pessoas.dto.pessoa;
 
-import com.attornatus.api.pessoas.model.Pessoa;
+import com.attornatus.api.pessoas.model.pessoa.Pessoa;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
