@@ -8,6 +8,11 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+/**
+ * Classe AutenticacaoService responsavel tratada pelo springSecurity para autenticação de usuario. (regras de negocio).
+ * Autor: Jackson Santos
+ */
+
 @Service
 public class AutenticacaoService implements UserDetailsService {
 

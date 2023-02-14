@@ -11,6 +11,12 @@ import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 
+/**
+ * Classe tokenService -  responsavel por tratamento do token, geração e expiração do token.
+ * Autor: Jackson Santos
+ *
+ */
+
 @Service
 public class TokenService {
 

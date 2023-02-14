@@ -14,6 +14,12 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+/**
+ * Classe Security -  Classe responsavel por tratamento de requisição e liberação, tratamento de usuario e Encoder com BCrypt
+ * Autor: Jackson Santos
+ *
+ */
+
 @Configuration
 @EnableWebSecurity
 public class SecurityConfigurations {

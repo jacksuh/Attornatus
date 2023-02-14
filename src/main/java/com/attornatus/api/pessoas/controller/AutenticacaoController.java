@@ -14,6 +14,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * Classe responsavel pelas requisições com os metodos Salvar/ para usuario, onde o post faz a verificação se o usuario existe no banco
+ * retornado o token caso o usuario esteja cadastrado.
+ * Autor: Jackson Santos
+ *
+ */
+
 @RestController
 @RequestMapping("/login")
 public class AutenticacaoController {

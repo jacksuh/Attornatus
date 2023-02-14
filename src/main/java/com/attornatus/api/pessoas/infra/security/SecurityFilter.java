@@ -15,6 +15,12 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
 
+/**
+ * Classe SecutiryFilter -  Responsavel por tratamento de filtro e token.
+ * Autor: Jackson Santos
+ *
+ */
+
 @Component
 public class SecurityFilter extends OncePerRequestFilter {
 

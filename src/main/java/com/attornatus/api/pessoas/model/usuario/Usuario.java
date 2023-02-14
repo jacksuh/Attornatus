@@ -12,6 +12,14 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.List;
 
+/**
+ * Classe para declaração de dados e persistencia com o banco de dados, sera criado a tabela Usuario.
+ * Utilizando UserDetails do SpringSecurity
+ *
+ * Autor: Jackson Santos
+ */
+
+
 @Table(name = "usuarios")
 @Entity(name = "Usuario")
 @Getter
