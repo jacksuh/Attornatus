@@ -31,7 +31,7 @@ As seguintes tecnologias foram utilizadas no desenvolvimento da API Rest do proj
 - **[Lombok](https://projectlombok.org)**
 - **[Junit](https://junit.org/junit4/)**
 - **[Swagger](https://swagger.io/docs/)**
-- **[Sṕring Security](https://docs.spring.io/spring-security/reference/index.html)**
+- **[Spring Security](https://docs.spring.io/spring-security/reference/index.html)**
 - **[JWT auth0](https://jwt.io/)**
 
 
